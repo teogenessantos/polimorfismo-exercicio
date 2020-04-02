@@ -24,19 +24,20 @@ public class Program {
 		Double price;
 		
 		for (int i = 1; i <= qtdProducts; i++) {
-			sc.nextLine();
-			System.out.print("Product #"+i+" data:");
+			
+			System.out.println("Product #"+i+" data:");
 			System.out.print("Common, used or imported (c/u/i)?");
 			typeProduct = sc.next().charAt(0);
+			sc.nextLine();
 			System.out.print("Name: ");
 			name = sc.nextLine();
-			System.out.print("Name: ");
+			System.out.print("Price: ");
 			price = sc.nextDouble();
 			if(typeProduct == 'i') {
 				System.out.print("Customs fee: ");
 				Double customesFee = sc.nextDouble();
 				listProduct.add(new ImportedProduct(name,price,customesFee));
-			}else if(typeProduct == 'i') {
+			}else if(typeProduct == 'u') {
 				System.out.print("Manufacture date (DD/MM/YYYY): ");
 				Date manufactureDate = sdf.parse(sc.next());
 				listProduct.add(new UsedProduct(name, price, manufactureDate));
@@ -44,7 +45,7 @@ public class Program {
 				listProduct.add(new Product(name, price));
 			}
 		}
-		System.out.print("PRICE TAGS:");
+		System.out.println("PRICE TAGS:");
 		for (Product product : listProduct) {
 			if(product instanceof ImportedProduct) {
 				System.out.printf("%s $ %.2f (Customs fee: $ %.2f%n)",product.getName(),product.getPrice(),((ImportedProduct) product).getCustomesFee());
