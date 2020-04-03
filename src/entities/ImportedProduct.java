@@ -24,6 +24,6 @@ public class ImportedProduct extends Product{
 		return "teste";
 	}
 	public Double totalPrice() {
-		return 0.0;
+		return getPrice()+getCustomesFee();
 	}
 }
