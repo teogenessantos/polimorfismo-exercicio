@@ -47,13 +47,7 @@ public class Program {
 		}
 		System.out.println("PRICE TAGS:");
 		for (Product product : listProduct) {
-			if(product instanceof ImportedProduct) {
-				System.out.println(product.priceTag());
-			}else if(product instanceof UsedProduct){
-				System.out.println(product.priceTag());
-			}else {
-				System.out.println(product.priceTag());
-			}
+			System.out.println(product.priceTag());
 		}
 		sc.close();
 
