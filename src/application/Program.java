@@ -48,11 +48,11 @@ public class Program {
 		System.out.println("PRICE TAGS:");
 		for (Product product : listProduct) {
 			if(product instanceof ImportedProduct) {
-				product.priceTag();
+				System.out.println(product.priceTag());
 			}else if(product instanceof UsedProduct){
-				System.out.printf("%s (Used) $ %.2f (Manufacture: %s)%n",product.getName(),product.getPrice(),sdf.format(((UsedProduct) product).getManufactureDate()));
+				System.out.println(product.priceTag());
 			}else {
-				System.out.printf("%s $ %.2f%n",product.getName(),product.getPrice());
+				System.out.println(product.priceTag());
 			}
 		}
 		sc.close();
