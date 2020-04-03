@@ -48,7 +48,7 @@ public class Program {
 		System.out.println("PRICE TAGS:");
 		for (Product product : listProduct) {
 			if(product instanceof ImportedProduct) {
-				System.out.printf("%s $ %.2f (Customs fee: $ %.2f)%n",product.getName(),((ImportedProduct) product).totalPrice(),((ImportedProduct) product).getCustomesFee());
+				product.priceTag();
 			}else if(product instanceof UsedProduct){
 				System.out.printf("%s (Used) $ %.2f (Manufacture: %s)%n",product.getName(),product.getPrice(),sdf.format(((UsedProduct) product).getManufactureDate()));
 			}else {
